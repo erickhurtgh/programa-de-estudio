@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de Computación Básica para Principiantes</title>
     <style>
         :root {
-            --color-primary: #0ea5e9; /* sky-500 */
-            --color-accent: #9333ea;  /* purple-600 */
-            --color-support: #f59e0b; /* amber-500 */
-            --color-text: #1f2937;      /* gray-800 */
-            --color-text-light: #f9fafb;/* gray-50 */
-            --color-bg: #f9fafb;        /* gray-50 */
+            --color-primary: #0ea5e9;
+            /* sky-500 */
+            --color-accent: #9333ea;
+            /* purple-600 */
+            --color-support: #f59e0b;
+            /* amber-500 */
+            --color-text: #1f2937;
+            /* gray-800 */
+            --color-text-light: #f9fafb;
+            /* gray-50 */
+            --color-bg: #f9fafb;
+            /* gray-50 */
             --color-bg-alt: #ffffff;
-            --color-border: #e5e7eb;  /* gray-200 */
+            --color-border: #e5e7eb;
+            /* gray-200 */
 
             --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -21,7 +29,9 @@
             --border-radius: 0.5rem;
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -39,21 +49,49 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             line-height: 1.2;
             color: var(--color-primary);
             margin-bottom: 1rem;
         }
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; margin-top: 2.5rem; }
-        h3 { font-size: 1.5rem; color: var(--color-accent); margin-top: 1.5rem;}
-        h4 { font-size: 1.2rem; color: var(--color-text); font-weight: 600; margin-top: 1rem; }
 
-        p, ul, ol {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            margin-top: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        p,
+        ul,
+        ol {
             margin-bottom: 1rem;
         }
 
-        ul, ol {
+        ul,
+        ol {
             padding-left: 1.5rem;
         }
 
@@ -62,7 +100,9 @@
             text-decoration: none;
             font-weight: 600;
         }
-        a:hover, a:focus {
+
+        a:hover,
+        a:focus {
             text-decoration: underline;
         }
 
@@ -81,12 +121,14 @@
             position: relative;
             overflow: hidden;
         }
+
         .main-header h1 {
             color: var(--color-text-light);
             font-family: "Courier New", Courier, monospace;
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
         }
+
         .main-header .subtitle {
             font-size: 1.4rem;
             font-weight: 300;
@@ -94,6 +136,7 @@
             max-width: 700px;
             margin: 0 auto;
         }
+
         .header-bg-svg {
             position: absolute;
             top: 0;
@@ -103,6 +146,7 @@
             z-index: 0;
             opacity: 0.1;
         }
+
         .header-content {
             position: relative;
             z-index: 1;
@@ -116,6 +160,7 @@
             top: 0;
             z-index: 10;
         }
+
         .main-nav ul {
             list-style: none;
             display: flex;
@@ -124,6 +169,7 @@
             padding: 0;
             margin: 0;
         }
+
         .main-nav li a {
             display: block;
             padding: 1rem 1.5rem;
@@ -131,12 +177,15 @@
             font-weight: 600;
             transition: color 0.2s, background-color 0.2s;
         }
-        .main-nav li a:hover, .main-nav li a:focus {
+
+        .main-nav li a:hover,
+        .main-nav li a:focus {
             color: var(--color-primary);
-            background-color: #f3f4f6; /* gray-100 */
+            background-color: #f3f4f6;
+            /* gray-100 */
             text-decoration: none;
         }
-        
+
         /* --- General Sections --- */
         section {
             padding: 2rem 0;
@@ -150,6 +199,7 @@
             margin-bottom: 0.75rem;
             font-size: 1.1rem;
         }
+
         .icon-list svg {
             flex-shrink: 0;
             width: 24px;
@@ -162,6 +212,7 @@
         .week-grid {
             margin-top: 2rem;
         }
+
         .week-article {
             background-color: var(--color-bg-alt);
             border: 1px solid var(--color-border);
@@ -170,12 +221,14 @@
             padding: 1.5rem;
             box-shadow: var(--shadow-sm);
         }
+
         .day-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
+
         .day-card {
             background-color: var(--color-bg);
             border: 1px solid var(--color-border);
@@ -185,19 +238,23 @@
             flex-direction: column;
             transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .day-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
+
         .day-card h4 {
             color: var(--color-primary);
             border-bottom: 2px solid var(--color-support);
             padding-bottom: 0.5rem;
             display: inline-block;
         }
+
         .day-card .card-section {
             margin-top: 1rem;
         }
+
         .day-card .card-section strong {
             display: flex;
             align-items: center;
@@ -205,10 +262,12 @@
             color: var(--color-accent);
             font-weight: 600;
         }
+
         .day-card .card-section svg {
             width: 18px;
             height: 18px;
         }
+
         .day-card .card-section ul {
             font-size: 0.95rem;
             padding-left: 1.2rem;
@@ -220,6 +279,7 @@
             text-align: center;
             padding: 2rem 0;
         }
+
         #btn-imprimir {
             background-color: var(--color-accent);
             color: var(--color-text-light);
@@ -232,22 +292,30 @@
             transition: background-color 0.3s, transform 0.2s;
             box-shadow: var(--shadow-md);
         }
-        #btn-imprimir:hover, #btn-imprimir:focus {
-            background-color: #a855f7; /* purple-500 */
+
+        #btn-imprimir:hover,
+        #btn-imprimir:focus {
+            background-color: #a855f7;
+            /* purple-500 */
             transform: translateY(-3px);
             outline: 2px solid transparent;
             outline-offset: 2px;
         }
-        
+
         /* --- Footer --- */
         .main-footer {
-            background-color: #374151; /* gray-700 */
-            color: #d1d5db; /* gray-300 */
+            background-color: #374151;
+            /* gray-700 */
+            color: #d1d5db;
+            /* gray-300 */
             text-align: center;
             padding: 2rem 1rem;
             font-size: 0.9rem;
         }
-        .main-footer p { margin: 0; }
+
+        .main-footer p {
+            margin: 0;
+        }
 
         /* --- Accessibility --- */
         :focus-visible {
@@ -255,14 +323,29 @@
             outline-offset: 3px;
             border-radius: 2px;
         }
-        
+
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .main-header h1 { font-size: 2.5rem; }
-            .main-nav ul { flex-direction: column; align-items: center; }
-            .container { padding: 1rem; }
-            .day-grid { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 2rem;
+            }
+
+            .main-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .day-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* --- Print Styles --- */
@@ -278,11 +361,18 @@
                 font-size: 12pt;
             }
 
-            .main-header, .main-nav, #btn-imprimir, .main-footer, .header-bg-svg {
+            .main-header,
+            .main-nav,
+            #btn-imprimir,
+            .main-footer,
+            .header-bg-svg {
                 display: none;
             }
 
-            h1, h2, h3, h4 {
+            h1,
+            h2,
+            h3,
+            h4 {
                 color: #000 !important;
                 page-break-after: avoid;
             }
@@ -291,20 +381,20 @@
                 border-color: #ccc;
                 font-size: 18pt;
             }
-            
+
             h3 {
                 font-size: 15pt;
             }
-            
+
             .container {
                 max-width: 100%;
                 padding: 0;
             }
-            
+
             section {
                 padding: 1rem 0;
             }
-            
+
             .week-article {
                 border: 1px solid #ccc;
                 box-shadow: none;
@@ -312,6 +402,7 @@
                 padding: 0;
                 margin-bottom: 1.5rem;
             }
+
             .week-article:first-of-type {
                 page-break-before: avoid;
             }
@@ -319,7 +410,7 @@
             .day-grid {
                 display: block;
             }
-            
+
             .day-card {
                 border: 1px solid #eee;
                 box-shadow: none;
@@ -331,21 +422,31 @@
                 color: #000;
                 text-decoration: none;
             }
+
             .icon-list svg {
                 display: none;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
         <div class="header-bg-svg" aria-hidden="true">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p" width="50" height="50" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0h50v1H0zm25 0v50h1V0z" fill="#fff"/></pattern></defs><rect width="100%" height="100%" fill="url(#p)"/></svg>
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="p" width="50" height="50" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <path d="M0 0h50v1H0zm25 0v50h1V0z" fill="#fff" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#p)" />
+            </svg>
         </div>
         <div class="header-content container">
             <h1>Curso de Computación Básica para Principiantes</h1>
-            <p class="subtitle">Un programa de 4 semanas para aprender a usar la computadora desde cero. Total: 40 horas.</p>
+            <p class="subtitle">Un programa de 4 semanas para aprender a usar la computadora desde cero. Total: 40
+                horas.</p>
         </div>
     </header>
 
@@ -362,31 +463,82 @@
     </nav>
 
     <main class="container">
-        
+
         <section id="objetivos">
-            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Objetivos de Aprendizaje</h2>
+            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: middle; margin-right: 0.5rem;">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>Objetivos de Aprendizaje</h2>
             <p>Al finalizar este curso, serás capaz de:</p>
             <ul class="icon-list">
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>Operar una computadora de forma autónoma y segura, identificando sus componentes principales.</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Navegar por internet, realizar búsquedas efectivas y gestionar una cuenta de correo electrónico.</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>Crear y editar documentos de texto, hojas de cálculo y presentaciones sencillas.</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>Organizar archivos y carpetas, y comprender la importancia de las copias de seguridad.</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield/></svg>Aplicar prácticas básicas de seguridad digital para proteger tu información personal.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2"></circle>
+                    </svg>Operar una computadora de forma autónoma y segura, identificando sus componentes principales.
+                </li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path
+                            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>Navegar por internet, realizar búsquedas efectivas y gestionar una cuenta de correo
+                    electrónico.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>Crear y editar documentos de texto, hojas de cálculo y presentaciones sencillas.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>Organizar archivos y carpetas, y comprender la importancia de las copias de seguridad.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <shield />
+                    </svg>Aplicar prácticas básicas de seguridad digital para proteger tu información personal.</li>
             </ul>
         </section>
-        
+
         <section id="requisitos">
-            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"></path><line x1="8" y1="16" x2="8.01" y2="16"></line><line x1="12" y1="18" x2="12.01" y2="18"></line><line x1="16" y1="16" x2="16.01" y2="16"></line></svg>Requisitos Previos</h2>
-             <ul class="icon-list">
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No se requiere ninguna experiencia previa. ¡La curiosidad es tu único requisito!</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Disponer de una computadora (de escritorio o portátil) con un sistema operativo funcional (Windows, macOS o Linux).</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 18L12 12L16 14"/></svg>Disponibilidad de 2 horas diarias, de lunes a viernes, durante 4 semanas.</li>
+            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: middle; margin-right: 0.5rem;">
+                    <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"></path>
+                    <line x1="8" y1="16" x2="8.01" y2="16"></line>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    <line x1="16" y1="16" x2="16.01" y2="16"></line>
+                </svg>Requisitos Previos</h2>
+            <ul class="icon-list">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 6L9 17l-5-5" />
+                    </svg>No se requiere ninguna experiencia previa. ¡La curiosidad es tu único requisito!</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>Disponer de una computadora (de escritorio o portátil) con un sistema operativo funcional
+                    (Windows, macOS o Linux).</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" />
+                        <path d="M12 18L12 12L16 14" />
+                    </svg>Disponibilidad de 2 horas diarias, de lunes a viernes, durante 4 semanas.</li>
             </ul>
         </section>
 
         <section id="calendario">
             <h2>🗓️ Calendario del Curso (4 Semanas)</h2>
-            
+
             <div class="week-grid">
                 <!-- SEMANA 1 -->
                 <article class="week-article" id="semana1">
@@ -395,55 +547,216 @@
                         <!-- Día 1 -->
                         <div class="day-card">
                             <h4>Día 1: Conociendo la máquina</h4>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Hardware vs. Software.</li><li>Componentes: monitor, CPU, teclado, ratón.</li><li>Puertos básicos (USB).</li><li>Encendido y apagado seguro.</li></ul></div>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Identificar las partes de la computadora. Practicar el proceso de encendido y apagado correcto 3 veces.</p></div>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Distingue entre hardware y software, y enciende/apaga el equipo con seguridad.</p></div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Hardware vs. Software.</li>
+                                    <li>Componentes: monitor, CPU, teclado, ratón.</li>
+                                    <li>Puertos básicos (USB).</li>
+                                    <li>Encendido y apagado seguro.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Identificar las partes de la computadora. Practicar el proceso de encendido y apagado
+                                    correcto 3 veces.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Distingue entre hardware y software, y enciende/apaga el equipo con seguridad.</p>
+                            </div>
                         </div>
                         <!-- Día 2 -->
                         <div class="day-card">
                             <h4>Día 2: El ratón y el teclado</h4>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Uso del ratón: clic, doble clic, arrastrar.</li><li>El puntero.</li><li>Teclado: teclas principales, Enter, Espacio.</li><li>Mayúsculas y símbolos básicos.</li></ul></div>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Abrir un editor de texto simple (Bloc de notas / TextEdit) y escribir su nombre completo, edad y ciudad. Practicar seleccionando texto.</p></div>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Utiliza el ratón para interactuar y escribe frases cortas con el teclado.</p></div>
-                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8 8 4-8 4-8-4 8-4z"/><path d="M12 12v8M12 4v4"/></svg>Recursos adicionales:</strong>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
                                 <ul>
-                                    <li><a href="https://www.aulaclic.es/windows-10/b_2_2_1.htm" target="_blank">Tutorial: El teclado y el ratón de la computadora</a></li>
-                                    <li><a href="https://www.typing.com/es/lecciones/principiantes" target="_blank">Práctica interactiva de mecanografía</a></li>
-                                    <li><a href="https://vedoque.com/juegos/juego.php?j=Mueve-la-mano" target="_blank">Juego: Practicar con el ratón</a></li>
+                                    <li>Uso del ratón: clic, doble clic, arrastrar.</li>
+                                    <li>El puntero.</li>
+                                    <li>Teclado: teclas principales, Enter, Espacio.</li>
+                                    <li>Mayúsculas y símbolos básicos.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Abrir un editor de texto simple (Bloc de notas / TextEdit) y escribir su nombre
+                                    completo, edad y ciudad. Practicar seleccionando texto.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Utiliza el ratón para interactuar y escribe frases cortas con el teclado.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m12 8 8 4-8 4-8-4 8-4z" />
+                                        <path d="M12 12v8M12 4v4" />
+                                    </svg>Recursos adicionales:</strong>
+                                <ul>
+                                    <li><a href="https://www.aulaclic.es/windows-10/b_2_2_1.htm"
+                                            target="_blank">Tutorial: El teclado y el ratón de la computadora</a></li>
+                                    <li><a href="https://www.typing.com/es/lecciones/principiantes"
+                                            target="_blank">Práctica interactiva de mecanografía</a></li>
+                                    <li><a href="https://vedoque.com/juegos/juego.php?j=Mueve-la-mano"
+                                            target="_blank">Juego: Practicar con el ratón</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Día 3 -->
                         <div class="day-card">
-                          <h4>Día 3: El escritorio y las ventanas</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>¿Qué es el Sistema Operativo?</li><li>El escritorio: iconos y fondo.</li><li>La barra de tareas/Dock.</li><li>Abrir, cerrar, minimizar y maximizar ventanas.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Personalizar el fondo de escritorio. Abrir varias aplicaciones (calculadora, editor de texto) y organizarlas en la pantalla.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Administra ventanas y localiza aplicaciones en el sistema.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8 8 4-8 4-8-4 8-4z"/><path d="M12 12v8M12 4v4"/></svg>Recursos adicionales:</strong>
+                            <h4>Día 3: El escritorio y las ventanas</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
                                 <ul>
-                                    <li><a href="https://www.tiktok.com/@ejercicios_escolares/video/7524469204356025656" target="_blank">Video: Ejercicios escolares</a></li>
-                                    <li><a href="https://www.ibm.com/mx-es/think/topics/operating-systems" target="_blank">Artículo: ¿Qué es un sistema operativo?</a></li>
-                                    <li><a href="https://www.cyldigital.es/system/files/selflearning/files/Aprende%20a%20manejarte%20en%20Windows%2010.pdf" target="_blank">PDF: Aprende a manejarte en Windows 10</a></li>
-                                    <li><a href="https://www.tiktok.com/@cocotech.laptops/video/7153300572576206085" target="_blank">Video: Cocotech Laptops</a></li>
-                                    <li><a href="https://www.tiktok.com/@edessi7/video/7462999856257322245" target="_blank">Video: Edessi7</a></li>
-                                    <li><a href="https://www.aulaclic.es/windows-10/a_2_3_2.htm" target="_blank">Tutorial: El escritorio y la barra de tareas</a></li>
-                                    <li><a href="https://support.microsoft.com/es-es/windows/c%C3%B3mo-realizar-varias-tareas-a-la-vez-en-windows-b4fa0333-98f8-ef43-e25c-06d4fb1d6960" target="_blank">Tutorial: Cómo realizar varias tareas a la vez en Windows</a></li>
+                                    <li>¿Qué es el Sistema Operativo?</li>
+                                    <li>El escritorio: iconos y fondo.</li>
+                                    <li>La barra de tareas/Dock.</li>
+                                    <li>Abrir, cerrar, minimizar y maximizar ventanas.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Personalizar el fondo de escritorio. Abrir varias aplicaciones (calculadora, editor
+                                    de texto) y organizarlas en la pantalla.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Administra ventanas y localiza aplicaciones en el sistema.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m12 8 8 4-8 4-8-4 8-4z" />
+                                        <path d="M12 12v8M12 4v4" />
+                                    </svg>Recursos adicionales:</strong>
+                                <ul>
+                                    <li><a href="https://www.tiktok.com/@ejercicios_escolares/video/7524469204356025656"
+                                            target="_blank">Video: Ejercicios escolares</a></li>
+                                    <li><a href="https://www.ibm.com/mx-es/think/topics/operating-systems"
+                                            target="_blank">Artículo: ¿Qué es un sistema operativo?</a></li>
+                                    <li><a href="https://www.cyldigital.es/system/files/selflearning/files/Aprende%20a%20manejarte%20en%20Windows%2010.pdf"
+                                            target="_blank">PDF: Aprende a manejarte en Windows 10</a></li>
+                                    <li><a href="https://www.tiktok.com/@cocotech.laptops/video/7153300572576206085"
+                                            target="_blank">Video: Cocotech Laptops</a></li>
+                                    <li><a href="https://www.tiktok.com/@edessi7/video/7462999856257322245"
+                                            target="_blank">Video: Edessi7</a></li>
+                                    <li><a href="https://www.aulaclic.es/windows-10/a_2_3_2.htm"
+                                            target="_blank">Tutorial: El escritorio y la barra de tareas</a></li>
+                                    <li><a href="https://support.microsoft.com/es-es/windows/c%C3%B3mo-realizar-varias-tareas-a-la-vez-en-windows-b4fa0333-98f8-ef43-e25c-06d4fb1d6960"
+                                            target="_blank">Tutorial: Cómo realizar varias tareas a la vez en
+                                            Windows</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Día 4 -->
                         <div class="day-card">
-                          <h4>Día 4: Archivos y carpetas</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>¿Qué es un archivo? Tipos comunes (texto, imagen).</li><li>¿Qué es una carpeta? Organización.</li><li>Crear, renombrar y eliminar carpetas.</li><li>Crear y guardar un archivo.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Crear una carpeta llamada "Mis Documentos". Dentro, crear un archivo de texto llamado "Mi primera carta.txt" y escribir un saludo.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Crea archivos y los organiza en carpetas de forma lógica.</p></div>
+                            <h4>Día 4: Archivos y carpetas</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>¿Qué es un archivo? Tipos comunes (texto, imagen).</li>
+                                    <li>¿Qué es una carpeta? Organización.</li>
+                                    <li>Crear, renombrar y eliminar carpetas.</li>
+                                    <li>Crear y guardar un archivo.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Crear una carpeta llamada "Mis Documentos". Dentro, crear un archivo de texto llamado
+                                    "Mi primera carta.txt" y escribir un saludo.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Crea archivos y los organiza en carpetas de forma lógica.</p>
+                            </div>
                         </div>
                         <!-- Día 5 -->
                         <div class="day-card">
-                          <h4>Día 5: Mover y copiar</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Diferencia entre mover y copiar.</li><li>Copiar y pegar archivos/carpetas.</li><li>Cortar y pegar (mover).</li><li>La Papelera de Reciclaje.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Crear una carpeta "Fotos" y otra "Vacaciones". Copiar imágenes de muestra a "Fotos" y luego moverlas a "Vacaciones". Borrar un archivo y restaurarlo.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Gestiona archivos y carpetas usando las funciones de copiar, pegar y eliminar.</p></div>
+                            <h4>Día 5: Mover y copiar</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Diferencia entre mover y copiar.</li>
+                                    <li>Copiar y pegar archivos/carpetas.</li>
+                                    <li>Cortar y pegar (mover).</li>
+                                    <li>La Papelera de Reciclaje.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Crear una carpeta "Fotos" y otra "Vacaciones". Copiar imágenes de muestra a "Fotos" y
+                                    luego moverlas a "Vacaciones". Borrar un archivo y restaurarlo.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Gestiona archivos y carpetas usando las funciones de copiar, pegar y eliminar.</p>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -451,41 +764,182 @@
                 <!-- SEMANA 2 -->
                 <article class="week-article" id="semana2">
                     <h3>Semana 2: Explorando Internet</h3>
-                     <div class="day-grid">
+                    <div class="day-grid">
                         <!-- Día 6 -->
                         <div class="day-card">
-                          <h4>Día 6: La puerta a Internet</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>¿Qué es Internet?</li><li>El navegador web (Chrome, Firefox, Edge).</li><li>La barra de direcciones.</li><li>Botones: atrás, adelante, recargar.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Abrir el navegador. Visitar un sitio de noticias conocido y navegar por diferentes secciones usando los enlaces y botones.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Abre y utiliza un navegador web para visitar sitios web.</p></div>
+                            <h4>Día 6: La puerta a Internet</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>¿Qué es Internet?</li>
+                                    <li>El navegador web (Chrome, Firefox, Edge).</li>
+                                    <li>La barra de direcciones.</li>
+                                    <li>Botones: atrás, adelante, recargar.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Abrir el navegador. Visitar un sitio de noticias conocido y navegar por diferentes
+                                    secciones usando los enlaces y botones.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Abre y utiliza un navegador web para visitar sitios web.</p>
+                            </div>
                         </div>
                         <!-- Día 7 -->
                         <div class="day-card">
-                          <h4>Día 7: Buscando información</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Motores de búsqueda (Google, etc.).</li><li>Cómo formular una pregunta.</li><li>Palabras clave.</li><li>Distinguir anuncios de resultados.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Buscar "el clima en mi ciudad", "receta de tarta de manzana" y el "horario del museo local". Comparar los resultados.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Encuentra información específica en Internet usando un motor de búsqueda.</p></div>
+                            <h4>Día 7: Buscando información</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Motores de búsqueda (Google, etc.).</li>
+                                    <li>Cómo formular una pregunta.</li>
+                                    <li>Palabras clave.</li>
+                                    <li>Distinguir anuncios de resultados.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Buscar "el clima en mi ciudad", "receta de tarta de manzana" y el "horario del museo
+                                    local". Comparar los resultados.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Encuentra información específica en Internet usando un motor de búsqueda.</p>
+                            </div>
                         </div>
                         <!-- Día 8 -->
                         <div class="day-card">
-                          <h4>Día 8: El correo electrónico</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>¿Qué es y para qué sirve?</li><li>Crear una cuenta de correo gratuita (Gmail/Outlook).</li><li>Bandeja de entrada, enviados, borradores.</li><li>Escribir y enviar un correo.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Seguir paso a paso la creación de una cuenta de correo. Enviar un primer correo de prueba al instructor.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Posee y sabe acceder a una cuenta de correo electrónico personal.</p></div>
+                            <h4>Día 8: El correo electrónico</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>¿Qué es y para qué sirve?</li>
+                                    <li>Crear una cuenta de correo gratuita (Gmail/Outlook).</li>
+                                    <li>Bandeja de entrada, enviados, borradores.</li>
+                                    <li>Escribir y enviar un correo.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Seguir paso a paso la creación de una cuenta de correo. Enviar un primer correo de
+                                    prueba al instructor.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Posee y sabe acceder a una cuenta de correo electrónico personal.</p>
+                            </div>
                         </div>
                         <!-- Día 9 -->
                         <div class="day-card">
-                          <h4>Día 9: Gestionar el correo</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Responder y reenviar correos.</li><li>Adjuntar un archivo.</li><li>Reconocer spam o correo no deseado.</li><li>"Netiqueta": normas de cortesía online.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Responder el correo del instructor. Escribir un nuevo correo a un compañero adjuntando el archivo "Mi primera carta.txt".</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Envía, responde y adjunta archivos en correos electrónicos de forma apropiada.</p></div>
+                            <h4>Día 9: Gestionar el correo</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Responder y reenviar correos.</li>
+                                    <li>Adjuntar un archivo.</li>
+                                    <li>Reconocer spam o correo no deseado.</li>
+                                    <li>"Netiqueta": normas de cortesía online.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Responder el correo del instructor. Escribir un nuevo correo a un compañero
+                                    adjuntando el archivo "Mi primera carta.txt".</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Envía, responde y adjunta archivos en correos electrónicos de forma apropiada.</p>
+                            </div>
                         </div>
                         <!-- Día 10 -->
                         <div class="day-card">
-                          <h4>Día 10: Seguridad básica online</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Crear contraseñas seguras.</li><li>Peligros: Phishing y estafas comunes.</li><li>La importancia de las actualizaciones.</li><li>Sitios web seguros (HTTPS y el candado).</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Analizar ejemplos de correos de phishing. Usar un generador de contraseñas de ejemplo para ver qué las hace fuertes. Verificar el candado en sitios web.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Identifica riesgos básicos de seguridad y conoce cómo crear una contraseña segura.</p></div>
+                            <h4>Día 10: Seguridad básica online</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Crear contraseñas seguras.</li>
+                                    <li>Peligros: Phishing y estafas comunes.</li>
+                                    <li>La importancia de las actualizaciones.</li>
+                                    <li>Sitios web seguros (HTTPS y el candado).</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Analizar ejemplos de correos de phishing. Usar un generador de contraseñas de ejemplo
+                                    para ver qué las hace fuertes. Verificar el candado en sitios web.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Identifica riesgos básicos de seguridad y conoce cómo crear una contraseña segura.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -493,41 +947,181 @@
                 <!-- SEMANA 3 -->
                 <article class="week-article" id="semana3">
                     <h3>Semana 3: Herramientas de Productividad</h3>
-                     <div class="day-grid">
+                    <div class="day-grid">
                         <!-- Día 11 -->
                         <div class="day-card">
-                          <h4>Día 11: Procesador de textos I</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Introducción (Word, Google Docs, Writer).</li><li>Crear, abrir y guardar un documento.</li><li>Formato de texto: negrita, cursiva, tamaño.</li><li>Cambiar el tipo de letra.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Escribir un párrafo sobre su comida favorita y aplicar diferentes formatos al texto (título en negrita, ingredientes en cursiva).</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Crea un documento de texto y le aplica formatos básicos.</p></div>
+                            <h4>Día 11: Procesador de textos I</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Introducción (Word, Google Docs, Writer).</li>
+                                    <li>Crear, abrir y guardar un documento.</li>
+                                    <li>Formato de texto: negrita, cursiva, tamaño.</li>
+                                    <li>Cambiar el tipo de letra.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Escribir un párrafo sobre su comida favorita y aplicar diferentes formatos al texto
+                                    (título en negrita, ingredientes en cursiva).</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Crea un documento de texto y le aplica formatos básicos.</p>
+                            </div>
                         </div>
                         <!-- Día 12 -->
                         <div class="day-card">
-                          <h4>Día 12: Procesador de textos II</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Alineación de texto (izquierda, centro).</li><li>Copiar y pegar texto.</li><li>Listas numeradas y con viñetas.</li><li>Corrector ortográfico.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5"cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Crear una lista de la compra usando viñetas. Escribir una frase con errores para practicar el uso del corrector ortográfico.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Estructura un documento con listas y corrige errores ortográficos.</p></div>
+                            <h4>Día 12: Procesador de textos II</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Alineación de texto (izquierda, centro).</li>
+                                    <li>Copiar y pegar texto.</li>
+                                    <li>Listas numeradas y con viñetas.</li>
+                                    <li>Corrector ortográfico.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Crear una lista de la compra usando viñetas. Escribir una frase con errores para
+                                    practicar el uso del corrector ortográfico.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Estructura un documento con listas y corrige errores ortográficos.</p>
+                            </div>
                         </div>
-                         <!-- Día 13 -->
+                        <!-- Día 13 -->
                         <div class="day-card">
-                          <h4>Día 13: Hojas de cálculo I</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Introducción (Excel, Google Sheets, Calc).</li><li>Celdas, filas y columnas.</li><li>Introducir texto y números.</li><li>Crear una tabla simple.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Crear una lista de contactos con columnas para Nombre, Apellido y Teléfono. Rellenar con 5 contactos ficticios.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Introduce y organiza datos en una hoja de cálculo.</p></div>
+                            <h4>Día 13: Hojas de cálculo I</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Introducción (Excel, Google Sheets, Calc).</li>
+                                    <li>Celdas, filas y columnas.</li>
+                                    <li>Introducir texto y números.</li>
+                                    <li>Crear una tabla simple.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Crear una lista de contactos con columnas para Nombre, Apellido y Teléfono. Rellenar
+                                    con 5 contactos ficticios.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Introduce y organiza datos en una hoja de cálculo.</p>
+                            </div>
                         </div>
                         <!-- Día 14 -->
                         <div class="day-card">
-                          <h4>Día 14: Hojas de cálculo II</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>¿Qué es una fórmula?</li><li>La función SUMA.</li><li>Formato de celdas (moneda, negrita).</li><li>Crear un presupuesto simple.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Crear una tabla de gastos mensuales (Alquiler, Comida, Transporte) con sus costes. Usar SUMA para calcular el total.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Realiza cálculos básicos utilizando fórmulas en una hoja de cálculo.</p></div>
+                            <h4>Día 14: Hojas de cálculo II</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>¿Qué es una fórmula?</li>
+                                    <li>La función SUMA.</li>
+                                    <li>Formato de celdas (moneda, negrita).</li>
+                                    <li>Crear un presupuesto simple.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Crear una tabla de gastos mensuales (Alquiler, Comida, Transporte) con sus costes.
+                                    Usar SUMA para calcular el total.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Realiza cálculos básicos utilizando fórmulas en una hoja de cálculo.</p>
+                            </div>
                         </div>
                         <!-- Día 15 -->
                         <div class="day-card">
-                          <h4>Día 15: Presentaciones</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Introducción (PowerPoint, Google Slides, Impress).</li><li>Diapositivas y diseños.</li><li>Añadir títulos y texto.</li><li>Insertar una imagen simple.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Crear una presentación de 3 diapositivas sobre "Mi viaje ideal": una para el título, una con texto descriptivo y otra con una imagen.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Crea una presentación básica con texto e imágenes.</p></div>
+                            <h4>Día 15: Presentaciones</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Introducción (PowerPoint, Google Slides, Impress).</li>
+                                    <li>Diapositivas y diseños.</li>
+                                    <li>Añadir títulos y texto.</li>
+                                    <li>Insertar una imagen simple.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Crear una presentación de 3 diapositivas sobre "Mi viaje ideal": una para el título,
+                                    una con texto descriptivo y otra con una imagen.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Crea una presentación básica con texto e imágenes.</p>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -538,38 +1132,180 @@
                     <div class="day-grid">
                         <!-- Día 16 -->
                         <div class="day-card">
-                          <h4>Día 16: Almacenamiento en la nube</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>¿Qué es la "nube"?</li><li>Ventajas (acceso desde cualquier lugar).</li><li>Servicios populares (Google Drive, OneDrive).</li><li>Subir y descargar un archivo.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Acceder a un servicio de almacenamiento en la nube con la cuenta de correo creada. Subir el documento "Mi primera carta.txt".</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Sube y gestiona archivos básicos en un servicio en la nube.</p></div>
+                            <h4>Día 16: Almacenamiento en la nube</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>¿Qué es la "nube"?</li>
+                                    <li>Ventajas (acceso desde cualquier lugar).</li>
+                                    <li>Servicios populares (Google Drive, OneDrive).</li>
+                                    <li>Subir y descargar un archivo.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Acceder a un servicio de almacenamiento en la nube con la cuenta de correo creada.
+                                    Subir el documento "Mi primera carta.txt".</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Sube y gestiona archivos básicos en un servicio en la nube.</p>
+                            </div>
                         </div>
-                         <!-- Día 17 -->
+                        <!-- Día 17 -->
                         <div class="day-card">
-                          <h4>Día 17: Mantenimiento y copias</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Importancia de las copias de seguridad.</li><li>Cómo hacer una copia a un USB.</li><li>Liberar espacio en disco.</li><li>Mantener el escritorio limpio.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Organizar todos los archivos creados en el curso en una única carpeta "Proyecto Final". Copiar esa carpeta a una memoria USB.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Realiza una copia de seguridad de sus archivos importantes en un dispositivo externo.</p></div>
+                            <h4>Día 17: Mantenimiento y copias</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Importancia de las copias de seguridad.</li>
+                                    <li>Cómo hacer una copia a un USB.</li>
+                                    <li>Liberar espacio en disco.</li>
+                                    <li>Mantener el escritorio limpio.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Organizar todos los archivos creados en el curso en una única carpeta "Proyecto
+                                    Final". Copiar esa carpeta a una memoria USB.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Realiza una copia de seguridad de sus archivos importantes en un dispositivo externo.
+                                </p>
+                            </div>
                         </div>
                         <!-- Día 18 -->
                         <div class="day-card">
-                          <h4>Día 18: Repaso general y dudas</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Repaso de Semana 1 a 3.</li><li>Atajos de teclado útiles (Ctrl+C, Ctrl+V).</li><li>Sesión abierta de preguntas y respuestas.</li><li>Introducción al proyecto final.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Ejercicios rápidos combinados: buscar algo online, copiarlo a un documento, guardarlo y enviarlo por correo.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Aclara dudas y se siente con confianza para empezar el proyecto final.</p></div>
+                            <h4>Día 18: Repaso general y dudas</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Repaso de Semana 1 a 3.</li>
+                                    <li>Atajos de teclado útiles (Ctrl+C, Ctrl+V).</li>
+                                    <li>Sesión abierta de preguntas y respuestas.</li>
+                                    <li>Introducción al proyecto final.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Ejercicios rápidos combinados: buscar algo online, copiarlo a un documento, guardarlo
+                                    y enviarlo por correo.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Aclara dudas y se siente con confianza para empezar el proyecto final.</p>
+                            </div>
                         </div>
                         <!-- Día 19 -->
                         <div class="day-card">
-                          <h4>Día 19: Taller de proyecto final</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Trabajo individual en el proyecto.</li><li>Apoyo personalizado del instructor.</li><li>Integración de habilidades: texto, cálculo y presentación.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Desarrollar un proyecto sobre "Planificar un pequeño evento": un documento con la invitación, una hoja de cálculo con el presupuesto y una presentación con el plan.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Aplica las habilidades aprendidas en un proyecto integrador.</p></div>
+                            <h4>Día 19: Taller de proyecto final</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Trabajo individual en el proyecto.</li>
+                                    <li>Apoyo personalizado del instructor.</li>
+                                    <li>Integración de habilidades: texto, cálculo y presentación.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Desarrollar un proyecto sobre "Planificar un pequeño evento": un documento con la
+                                    invitación, una hoja de cálculo con el presupuesto y una presentación con el plan.
+                                </p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Aplica las habilidades aprendidas en un proyecto integrador.</p>
+                            </div>
                         </div>
                         <!-- Día 20 -->
                         <div class="day-card">
-                          <h4>Día 20: Presentación y cierre</h4>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>Subtemas:</strong><ul><li>Presentación voluntaria de proyectos.</li><li>Retroalimentación positiva.</li><li>Entrega de certificados simbólicos.</li><li>Próximos pasos y recursos para seguir aprendiendo.</li></ul></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>Actividad práctica:</strong><p>Cada estudiante muestra su presentación o su documento final al grupo, explicando brevemente su trabajo. Celebración final.</p></div>
-                          <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z"/><path d="M12 18v-6"/><path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>Resultado:</strong><p>Gana confianza al compartir su trabajo y finaliza el curso con una visión clara de sus logros.</p></div>
+                            <h4>Día 20: Presentación y cierre</h4>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>Subtemas:</strong>
+                                <ul>
+                                    <li>Presentación voluntaria de proyectos.</li>
+                                    <li>Retroalimentación positiva.</li>
+                                    <li>Entrega de certificados simbólicos.</li>
+                                    <li>Próximos pasos y recursos para seguir aprendiendo.</li>
+                                </ul>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                    </svg>Actividad práctica:</strong>
+                                <p>Cada estudiante muestra su presentación o su documento final al grupo, explicando
+                                    brevemente su trabajo. Celebración final.</p>
+                            </div>
+                            <div class="card-section"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5z" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+                                    </svg>Resultado:</strong>
+                                <p>Gana confianza al compartir su trabajo y finaliza el curso con una visión clara de
+                                    sus logros.</p>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -578,12 +1314,16 @@
 
         <section id="metodologia">
             <h2>Metodología de Enseñanza</h2>
-            <p>El curso se basa en un enfoque <strong>100% práctico y centrado en el estudiante</strong>. Cada sesión combina:</p>
+            <p>El curso se basa en un enfoque <strong>100% práctico y centrado en el estudiante</strong>. Cada sesión
+                combina:</p>
             <ul>
                 <li><strong>Demostraciones en vivo:</strong> El instructor mostrará cada paso en pantalla.</li>
-                <li><strong>Ejercicios guiados:</strong> Practicarás junto al instructor para afianzar cada concepto.</li>
-                <li><strong>Apoyo individualizado:</strong> Respetamos tu ritmo de aprendizaje y ofrecemos ayuda personalizada.</li>
-                <li><strong>Aprendizaje por repetición:</strong> Reforzamos las habilidades clave a lo largo de las semanas.</li>
+                <li><strong>Ejercicios guiados:</strong> Practicarás junto al instructor para afianzar cada concepto.
+                </li>
+                <li><strong>Apoyo individualizado:</strong> Respetamos tu ritmo de aprendizaje y ofrecemos ayuda
+                    personalizada.</li>
+                <li><strong>Aprendizaje por repetición:</strong> Reforzamos las habilidades clave a lo largo de las
+                    semanas.</li>
             </ul>
         </section>
 
@@ -591,10 +1331,14 @@
             <h2>Evaluación</h2>
             <p>La evaluación es continua y está diseñada para motivar, no para calificar con notas.</p>
             <ul>
-                <li><strong>Evaluación diagnóstica:</strong> Una breve charla inicial para conocer el punto de partida de cada persona.</li>
-                <li><strong>Evaluación formativa:</strong> Observación y retroalimentación constante durante las actividades prácticas diarias.</li>
-                <li><strong>Proyecto final:</strong> Un ejercicio integrador que demuestra la adquisición de las competencias básicas del curso.</li>
-                <li><strong>Criterios de logro:</strong> Se considera exitosa la finalización del curso si el estudiante es capaz de completar el proyecto final con una autonomía razonable.</li>
+                <li><strong>Evaluación diagnóstica:</strong> Una breve charla inicial para conocer el punto de partida
+                    de cada persona.</li>
+                <li><strong>Evaluación formativa:</strong> Observación y retroalimentación constante durante las
+                    actividades prácticas diarias.</li>
+                <li><strong>Proyecto final:</strong> Un ejercicio integrador que demuestra la adquisición de las
+                    competencias básicas del curso.</li>
+                <li><strong>Criterios de logro:</strong> Se considera exitosa la finalización del curso si el estudiante
+                    es capaz de completar el proyecto final con una autonomía razonable.</li>
             </ul>
         </section>
 
@@ -603,22 +1347,31 @@
             <p>Utilizaremos software gratuito y preinstalado en la mayoría de los sistemas operativos.</p>
             <ul>
                 <li><strong>Navegador Web:</strong> Google Chrome, Mozilla Firefox o Microsoft Edge.</li>
-                <li><strong>Suite de Oficina:</strong> Se usarán las versiones online y gratuitas de <a href="https://docs.google.com/" target="_blank">Google Docs/Sheets/Slides</a>. Como alternativa, se puede usar LibreOffice (gratuito y multiplataforma) o Microsoft Office si ya está instalado.</li>
-                <li><strong>Correo Electrónico:</strong> Se recomienda crear una cuenta en <a href="https://mail.google.com/" target="_blank">Gmail</a> o <a href="https://outlook.live.com/" target="_blank">Outlook</a>.</li>
-                 <li><strong>Seguridad:</strong> Recomendaciones generales, no se instala software antivirus específico durante el curso.</li>
+                <li><strong>Suite de Oficina:</strong> Se usarán las versiones online y gratuitas de <a
+                        href="https://docs.google.com/" target="_blank">Google Docs/Sheets/Slides</a>. Como alternativa,
+                    se puede usar LibreOffice (gratuito y multiplataforma) o Microsoft Office si ya está instalado.</li>
+                <li><strong>Correo Electrónico:</strong> Se recomienda crear una cuenta en <a
+                        href="https://mail.google.com/" target="_blank">Gmail</a> o <a href="https://outlook.live.com/"
+                        target="_blank">Outlook</a>.</li>
+                <li><strong>Seguridad:</strong> Recomendaciones generales, no se instala software antivirus específico
+                    durante el curso.</li>
             </ul>
-            
+
             <h3>Consejos de Seguridad y Accesibilidad</h3>
-            <p><strong>Seguridad Digital:</strong> Nunca compartas tus contraseñas. Desconfía de correos electrónicos que te pidan información personal o te ofrezcan premios inesperados. Mantén tu sistema operativo actualizado.</p>
-            <p><strong>Accesibilidad:</strong> Aprenderemos atajos de teclado para reducir la dependencia del ratón. También exploraremos cómo aumentar el tamaño del texto en pantalla y en el navegador para una lectura más cómoda.</p>
+            <p><strong>Seguridad Digital:</strong> Nunca compartas tus contraseñas. Desconfía de correos electrónicos
+                que te pidan información personal o te ofrezcan premios inesperados. Mantén tu sistema operativo
+                actualizado.</p>
+            <p><strong>Accesibilidad:</strong> Aprenderemos atajos de teclado para reducir la dependencia del ratón.
+                También exploraremos cómo aumentar el tamaño del texto en pantalla y en el navegador para una lectura
+                más cómoda.</p>
         </section>
-        
+
         <div class="print-button-container">
-             <button id="btn-imprimir" type="button">Imprimir / Guardar como PDF</button>
+            <button id="btn-imprimir" type="button">Imprimir / Guardar como PDF</button>
         </div>
 
     </main>
-    
+
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2026 - Programa de Formación Digital. Contenido de libre uso para fines educativos.</p>
@@ -627,10 +1380,10 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const printButton = document.getElementById('btn-imprimir');
             if (printButton) {
-                printButton.addEventListener('click', function() {
+                printButton.addEventListener('click', function () {
                     window.print();
                 });
             }
@@ -638,4 +1391,5 @@
     </script>
 
 </body>
+
 </html>
